@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
+func printOsArgs () {
+	var s, sep string
+	for i := 1; i < len(os.Args); i++ {
+		s += sep + os.Args[i]
+		sep = " "
+	}
+	fmt.Println(s)
+}
 
 func main() {
-    fmt.Println("Hello, World!")
-}
+	println("main running")
+	printOsArgs()
+}   
